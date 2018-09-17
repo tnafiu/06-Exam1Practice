@@ -2,8 +2,8 @@
 PRACTICE Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Amanda Stouder, their colleagues and Toluwa Nafiu.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -37,7 +37,7 @@ def main():
 
 
 ########################################################################
-# TODO: 2.  READ the green doc-string for the:
+# DONE: 2.  READ the green doc-string for the:
 #   - is_prime
 #   - sum_of_digits
 # functions defined below.  You do NOT need to understand their
@@ -105,7 +105,7 @@ def sum_of_digits(number):
 def run_test_problem1a():
     """ Tests the   problem1a   function. """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # DONE: 3. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   4   ** tests (we wrote two for you).
     # ------------------------------------------------------------------
@@ -144,6 +144,18 @@ def run_test_problem1a():
     #   print('Test 1 expected:', expected)
     #   print('       actual:  ', actual)
     #  ------------------------------------------------------------------
+    # Test 3:
+    expected = -2.046  # This is APPROXIMATELY the correct answer.
+    print_expected_result_of_test([4, 9], expected, test_results, format_string)
+    actual = problem1a(4, 9)
+    print_actual_result_of_test(expected, actual, test_results)
+
+    # Test 4:
+    expected = -1.729  # This is APPROXIMATELY the correct answer.
+    print_expected_result_of_test([2, 7], expected, test_results,
+                                  format_string)
+    actual = problem1a(2, 7)
+    print_actual_result_of_test(expected, actual, test_results)
 
 
 def problem1a(m, n):
@@ -164,7 +176,7 @@ def problem1a(m, n):
       -- If m is 30 and n is 100, the correct answer is about 1.278.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -172,7 +184,11 @@ def problem1a(m, n):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     # ------------------------------------------------------------------
-
+    import math
+    count = 0
+    for k in range(m*m, n*n +1):
+        count = count + (math.sin(k))
+    return count
 
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
