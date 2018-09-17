@@ -193,7 +193,7 @@ def problem1a(m, n):
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement this TEST function.
+    # DONE: 5. Implement this TEST function.
     #   It TESTS the  problem1b  function defined below.
     #   Include at least **   4   ** tests.  Use the usual form:
     #
@@ -210,6 +210,29 @@ def run_test_problem1b():
     print('--------------------------------------------------')
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
+    # Test 1:
+    expected = 3
+    actual = problem1b(2, 3)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 2:
+    expected = 44
+    actual = problem1b(5, 40)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 3:
+    expected = 1
+    actual = problem1b(2, 1)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 4:
+    expected = 5
+    actual = problem1b(3, 5)
+    print('Test 4 expected:', expected)
+    print('       actual:  ', actual)
 
 
 def problem1b(m, f):
@@ -229,7 +252,7 @@ def problem1b(m, f):
            since there are 44 primes between 5 and 200.
      """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     ####################################################################
@@ -242,6 +265,11 @@ def problem1b(m, f):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 to 15 minutes.
     # ------------------------------------------------------------------
+    count = 0
+    for k in range(m, f * m + 1):
+        if is_prime(k) is True:
+            count = count + 1
+    return count
 
 
 def run_test_problem1c():
@@ -265,7 +293,6 @@ def run_test_problem1c():
     print_expected_result_of_test([11], expected, test_results, format_string)
     actual = problem1c(11)
     print_actual_result_of_test(expected, actual, test_results)
-
 
     # Test 3:
     expected = 33
@@ -323,7 +350,7 @@ def problem1c(n):
            and the sum of the digits in 223092870 is 33.
     """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -337,12 +364,17 @@ def problem1c(n):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 20 minutes.
     # ------------------------------------------------------------------
-
+    num = 1
+    for k in range(2, n + 1):
+        if is_prime(k) is True:
+            num = num * k
+    return sum_of_digits(num)
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
 # Do NOT change it.  You do NOT have to do anything with it.
 ###############################################################################
+
 
 def print_expected_result_of_test(arguments, expected,
                                   test_results, format_string):
