@@ -8,8 +8,8 @@ These problems illustrate concepts that previous problems have not emphasized:
   -- animation (Problem 0c)
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Amanda Stouder, their colleagues and Toluwa Nafiu.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 import testing_helper
@@ -24,7 +24,7 @@ def main():
 
 
 ########################################################################
-# TODO: 2.  READ the green doc-string for the:
+# DONE: 2.  READ the green doc-string for the:
 #   - is_prime
 #   - sum_of_digits
 # functions defined below.  You do NOT need to understand their
@@ -142,6 +142,13 @@ def run_test_problem0a():
     actual = problem0a(730931)
     print_actual_result_of_test(expected, actual, test_results)
 
+    # Test 6:
+    expected = False
+    print_expected_result_of_test([2314], expected, test_results,
+                                  format_string)
+    actual = problem0a(2314)
+    print_actual_result_of_test(expected, actual, test_results)
+
 
 def problem0a(n):
     """
@@ -159,7 +166,7 @@ def problem0a(n):
            since (2 + 4 + 6) is 12, which is NOT odd.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -176,7 +183,11 @@ def problem0a(n):
     #        Simply try a few examples to convince yourself of this.
     #        ASK FOR HELP if you do not understand this hint.
     # ------------------------------------------------------------------
-
+    m = sum_of_digits(n)
+    if m %2 == 1:
+        return True
+    else:
+        return False
 
 def run_test_problem0b():
     """ Tests the   problem0b   function. """
