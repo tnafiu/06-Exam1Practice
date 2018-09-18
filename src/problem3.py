@@ -153,12 +153,12 @@ def problem3a(window, point, n):
     #    DIFFICULTY:      7 or 8
     #    TIME ESTIMATE:   20 to 35 minutes.
     # ------------------------------------------------------------------
-    top = point
-    bottom = rg.Point(point.x, point.y + 50)
+    beg = point
+    end = rg.Point(point.x, point.y + 50)
     thic = 1
     sum_num = 0
     for i in range(n):
-        line = rg.Line(top, bottom)
+        line = rg.Line(beg, end)
         if thic > 13:
             thic = 13
         line.thickness = thic
@@ -166,8 +166,8 @@ def problem3a(window, point, n):
         line.attach_to(window)
         window.render()
         thic += 2
-        top = rg.Point(top.x + 20, top.y + 10)
-        bottom = rg.Point(top.x, top.y + 50)
+        beg = rg.Point(beg.x + 20, beg.y + 10)
+        end = rg.Point(beg.x, beg.y + 50)
     return sum_num
 
 
@@ -225,7 +225,7 @@ def problem3b(m, point1):
         :type point1: rg.Point
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -238,7 +238,16 @@ def problem3b(m, point1):
     #    DIFFICULTY:      8 or 9
     #    TIME ESTIMATE:   20 to 30 minutes.
     # ------------------------------------------------------------------
-    
+    window = rg.RoseWindow(400, 650)
+    k = 3
+    thickness = 0
+    for _ in range(m):
+        thickness = thickness + problem3a(window, point1, k)
+        point1.y = point1.y + 60
+        k = k + 2
+    window.close_on_mouse_click()
+    return thickness
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
